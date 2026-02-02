@@ -1,0 +1,1583 @@
+<!doctype html>
+<html lang="vi" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiệp Cưới</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Quicksand:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      .font-display {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      .font-body {
+        font-family: "Quicksand", sans-serif;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(-20px) rotate(5deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-fade-in {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+      .delay-600 {
+        animation-delay: 0.6s;
+      }
+
+      .floral-corner {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        opacity: 0.6;
+      }
+
+      .gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #d4a574 0%,
+          #c9956c 50%,
+          #b8860b 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .card-shadow {
+        box-shadow:
+          0 25px 80px rgba(139, 90, 43, 0.15),
+          0 10px 30px rgba(139, 90, 43, 0.1),
+          inset 0 0 100px rgba(255, 248, 240, 0.5);
+      }
+
+      .ornament-line {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #c9956c, transparent);
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full font-body">
+    <div
+      id="app-wrapper"
+      class="w-full h-full overflow-auto"
+      style="
+        background: linear-gradient(
+          135deg,
+          #fdf8f3 0%,
+          #f5ebe0 50%,
+          #faf6f1 100%
+        );
+      "
+    >
+      <!-- Floating Decorations -->
+      <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-10 left-10 text-4xl animate-float delay-100">
+          ����
+        </div>
+        <div class="absolute top-20 right-20 text-3xl animate-float delay-200">
+          ✨
+        </div>
+        <div
+          class="absolute bottom-32 left-20 text-3xl animate-float delay-300"
+        >
+          🌿
+        </div>
+        <div class="absolute top-40 left-1/4 text-2xl animate-float delay-400">
+          💐
+        </div>
+        <div
+          class="absolute bottom-20 right-16 text-4xl animate-float delay-500"
+        >
+          🌷
+        </div>
+        <div class="absolute top-1/3 right-10 text-2xl animate-float delay-600">
+          🍃
+        </div>
+      </div>
+      <!-- Main Card -->
+      <div
+        class="min-h-full py-12 md:py-20 flex items-start justify-center p-6 md:p-12"
+      >
+        <div
+          class="relative w-full max-w-2xl card-shadow rounded-3xl overflow-hidden"
+          style="background: linear-gradient(180deg, #fffcf8 0%, #fff9f2 100%)"
+        >
+          <!-- Top Floral Corner -->
+          <div class="floral-corner top-0 left-0">
+            <svg
+              viewbox="0 0 150 150"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0C30 50 50 80 150 150C100 100 60 60 0 0Z"
+                fill="url(#gold1)"
+                opacity="0.3"
+              />
+              <circle cx="30" cy="30" r="8" fill="#c9956c" opacity="0.5" />
+              <circle cx="50" cy="50" r="5" fill="#d4a574" opacity="0.4" />
+              <circle cx="20" cy="55" r="6" fill="#b8860b" opacity="0.3" />
+              <path
+                d="M10 10Q40 20 60 60Q30 40 10 10Z"
+                stroke="#c9956c"
+                stroke-width="0.5"
+                fill="none"
+                opacity="0.5"
+              />
+              <defs>
+                <lineargradient id="gold1" x1="0" y1="0" x2="150" y2="150">
+                  <stop offset="0%" stop-color="#d4a574" />
+                  <stop offset="100%" stop-color="#b8860b" />
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+          <!-- Bottom Right Floral Corner -->
+          <div class="floral-corner bottom-0 right-0 rotate-180">
+            <svg
+              viewbox="0 0 150 150"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0C30 50 50 80 150 150C100 100 60 60 0 0Z"
+                fill="url(#gold2)"
+                opacity="0.3"
+              />
+              <circle cx="30" cy="30" r="8" fill="#c9956c" opacity="0.5" />
+              <circle cx="50" cy="50" r="5" fill="#d4a574" opacity="0.4" />
+              <circle cx="20" cy="55" r="6" fill="#b8860b" opacity="0.3" />
+              <path
+                d="M10 10Q40 20 60 60Q30 40 10 10Z"
+                stroke="#c9956c"
+                stroke-width="0.5"
+                fill="none"
+                opacity="0.5"
+              />
+              <defs>
+                <lineargradient id="gold2" x1="0" y1="0" x2="150" y2="150">
+                  <stop offset="0%" stop-color="#d4a574" />
+                  <stop offset="100%" stop-color="#b8860b" />
+                </lineargradient>
+              </defs>
+            </svg>
+          </div>
+          <!-- Card Content -->
+          <div class="relative z-10 px-8 py-16 md:px-16 md:py-24 text-center">
+            <!-- Header -->
+            <div
+              class="animate-fade-in opacity-0"
+              style="animation-delay: 0.1s"
+            >
+              <p
+                class="font-body text-sm tracking-[0.3em] uppercase mb-2"
+                style="color: #8b7355"
+              >
+                Trân trọng kính mời
+              </p>
+              <div class="ornament-line w-24 mx-auto mb-8"></div>
+            </div>
+            <!-- Ring Icon -->
+            <div
+              class="animate-fade-in opacity-0 animate-pulse-slow mb-6"
+              style="animation-delay: 0.2s"
+            >
+              <div
+                class="inline-flex items-center justify-center w-20 h-20 rounded-full"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 165, 116, 0.1),
+                    rgba(184, 134, 11, 0.1)
+                  );
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewbox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="14"
+                    cy="20"
+                    r="8"
+                    stroke="#c9956c"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                  <circle
+                    cx="26"
+                    cy="20"
+                    r="8"
+                    stroke="#b8860b"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                  <circle cx="14" cy="16" r="2" fill="#d4a574" />
+                  <circle cx="26" cy="16" r="2" fill="#c9956c" />
+                </svg>
+              </div>
+            </div>
+            <!-- Names -->
+            <div
+              class="animate-fade-in opacity-0 mb-8"
+              style="animation-delay: 0.3s"
+            >
+              <h1
+                id="groom-name"
+                class="font-display text-4xl md:text-5xl font-semibold gold-gradient mb-3"
+              >
+                Minh Quân
+              </h1>
+              <div class="flex items-center justify-center gap-4 my-4">
+                <div class="ornament-line flex-1 max-w-16"></div>
+                <span
+                  class="font-display text-2xl italic"
+                  style="color: #c9956c"
+                  >&amp;</span
+                >
+                <div class="ornament-line flex-1 max-w-16"></div>
+              </div>
+              <h1
+                id="bride-name"
+                class="font-display text-4xl md:text-5xl font-semibold gold-gradient"
+              >
+                Thùy Linh
+              </h1>
+            </div>
+            <!-- Invitation Text -->
+            <div
+              class="animate-fade-in opacity-0 mb-10"
+              style="animation-delay: 0.4s"
+            >
+              <p
+                id="invitation-message"
+                class="font-body text-base md:text-lg leading-relaxed max-w-md mx-auto"
+                style="color: #6b5b4f"
+              >
+                Chúng tôi trân trọng kính mời quý khách ����ến dự buổi tiệc
+                chung vui trong ngày lễ Vu Quy của chúng tôi
+              </p>
+            </div>
+            <!-- Date & Time -->
+            <div
+              class="animate-fade-in opacity-0 mb-10"
+              style="animation-delay: 0.5s"
+            >
+              <div
+                class="inline-block px-8 py-6 rounded-2xl"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 165, 116, 0.08),
+                    rgba(184, 134, 11, 0.05)
+                  );
+                  border: 1px solid rgba(201, 149, 108, 0.2);
+                "
+              >
+                <p
+                  class="font-body text-xs tracking-[0.2em] uppercase mb-2"
+                  style="color: #a89078"
+                >
+                  Vào lúc
+                </p>
+                <p
+                  id="wedding-time"
+                  class="font-display text-2xl font-semibold mb-2"
+                  style="color: #8b5a2b"
+                >
+                  10:00 Sáng
+                </p>
+                <p
+                  id="wedding-date"
+                  class="font-display text-3xl md:text-4xl font-bold gold-gradient"
+                >
+                  Thứ Tư, 19 Tháng 3, 2026
+                </p>
+                <div class="mt-4 flex items-center justify-center gap-2">
+                  <span class="text-lg">📅</span>
+                  <p class="font-body text-sm" style="color: #8b7355">
+                    Nhằm ngày 15 tháng 11 n��m Giáp Thìn
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Venue -->
+            <div
+              class="animate-fade-in opacity-0 mb-8"
+              style="animation-delay: 0.6s"
+            >
+              <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="text-xl">📍</span>
+                <p
+                  class="font-body text-xs tracking-[0.2em] uppercase"
+                  style="color: #a89078"
+                >
+                  Địa điểm
+                </p>
+              </div>
+              <p
+                id="venue-name"
+                class="font-display text-xl md:text-2xl font-semibold mb-2"
+                style="color: #8b5a2b"
+              >
+                Trung Tâm Tiệc Cưới Diamond Palace
+              </p>
+              <p
+                id="venue-address"
+                class="font-body text-sm md:text-base"
+                style="color: #6b5b4f"
+              >
+                123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh
+              </p>
+            </div>
+            <!-- Footer Ornament -->
+            <div
+              class="animate-fade-in opacity-0"
+              style="animation-delay: 0.7s"
+            >
+              <div class="ornament-line w-32 mx-auto mb-4"></div>
+              <div class="flex items-center justify-center gap-3 text-2xl">
+                <span>💕</span>
+                <span class="font-display italic text-lg" style="color: #c9956c"
+                  >Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình
+                  chúng tôi</span
+                >
+                <span>💕</span>
+              </div>
+            </div>
+            <!-- Additional Content Section -->
+            <div
+              class="mt-16 pt-12 border-t"
+              style="border-color: rgba(201, 149, 108, 0.2)"
+            >
+              <!-- Love Story Timeline -->
+              <div
+                class="animate-fade-in opacity-0 mb-16"
+                style="animation-delay: 0.8s"
+              >
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-8"
+                >
+                  Câu Chuyện Tình Yêu
+                </h2>
+                <div class="space-y-8 max-w-lg mx-auto text-left">
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.1),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      <span class="text-2xl">🌸</span>
+                    </div>
+                    <div class="flex-1 pt-3">
+                      <p
+                        class="font-body font-semibold mb-1"
+                        style="color: #8b5a2b"
+                      >
+                        Tháng 5, 2019 - Gặp Gỡ
+                      </p>
+                      <p class="font-body text-sm" style="color: #6b5b4f">
+                        Lần đầu tiên chúng tôi gặp nhau tại một quán cà phê nhỏ
+                        xinh. Ánh mắt anh khiến em tin rằng đây chính là số
+                        phận.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.1),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      <span class="text-2xl">💑</span>
+                    </div>
+                    <div class="flex-1 pt-3">
+                      <p
+                        class="font-body font-semibold mb-1"
+                        style="color: #8b5a2b"
+                      >
+                        Tháng 12, 2020 - Yêu Nhau
+                      </p>
+                      <p class="font-body text-sm" style="color: #6b5b4f">
+                        Sau nhiều lần hẹn hò và chia sẻ, chúng tôi quyết định
+                        chính thức bên nhau. Tình yêu ngày càng lớn mạnh qua
+                        từng khoảnh khắc.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.1),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      <span class="text-2xl">💍</span>
+                    </div>
+                    <div class="flex-1 pt-3">
+                      <p
+                        class="font-body font-semibold mb-1"
+                        style="color: #8b5a2b"
+                      >
+                        Tháng 9, 2024 - Cầu Hôn
+                      </p>
+                      <p class="font-body text-sm" style="color: #6b5b4f">
+                        Dưới ánh hoàng hôn trên bãi biển, anh đã quỳ gối và hỏi
+                        em câu hỏi quan trọng nhất đời. Em đã gật đầu với hạnh
+                        phúc tràn ngập.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-4">
+                    <div
+                      class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.1),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      <span class="text-2xl">💒</span>
+                    </div>
+                    <div class="flex-1 pt-3">
+                      <p
+                        class="font-body font-semibold mb-1"
+                        style="color: #8b5a2b"
+                      >
+                        Tháng 12, 2024 - Chung Đôi
+                      </p>
+                      <p class="font-body text-sm" style="color: #6b5b4f">
+                        Và giờ đây, chúng tôi sẽ bước vào hành trình mới, cùng
+                        nhau xây dựng tổ ấm hạnh phúc với sự chúc phúc của gia
+                        đình và bạn bè.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Wedding Party Section -->
+              <div
+                class="animate-fade-in opacity-0 mb-16"
+                style="animation-delay: 0.9s"
+              >
+                <div class="ornament-line w-24 mx-auto mb-8"></div>
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-10"
+                >
+                  Phù Dâu &amp; Phù Rể
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
+                  <div
+                    class="text-center p-6 rounded-2xl"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.05),
+                        rgba(184, 134, 11, 0.03)
+                      );
+                    "
+                  >
+                    <div
+                      class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.15),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      👰
+                    </div>
+                    <p
+                      class="font-display text-xl font-semibold mb-1"
+                      style="color: #8b5a2b"
+                    >
+                      Thu Hà
+                    </p>
+                    <p class="font-body text-sm" style="color: #a89078">
+                      Phù Dâu
+                    </p>
+                    <p class="font-body text-xs mt-2" style="color: #6b5b4f">
+                      Người bạn thân thiết của cô dâu
+                    </p>
+                  </div>
+                  <div
+                    class="text-center p-6 rounded-2xl"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.05),
+                        rgba(184, 134, 11, 0.03)
+                      );
+                    "
+                  >
+                    <div
+                      class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl"
+                      style="
+                        background: linear-gradient(
+                          135deg,
+                          rgba(212, 165, 116, 0.15),
+                          rgba(184, 134, 11, 0.1)
+                        );
+                      "
+                    >
+                      🤵
+                    </div>
+                    <p
+                      class="font-display text-xl font-semibold mb-1"
+                      style="color: #8b5a2b"
+                    >
+                      Hoàng Nam
+                    </p>
+                    <p class="font-body text-sm" style="color: #a89078">
+                      Phù Rể
+                    </p>
+                    <p class="font-body text-xs mt-2" style="color: #6b5b4f">
+                      Người bạn tri kỷ của chú rể
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- RSVP Section -->
+              <div
+                class="animate-fade-in opacity-0 mb-12"
+                style="animation-delay: 1s"
+              >
+                <div class="ornament-line w-24 mx-auto mb-8"></div>
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-6"
+                >
+                  Xác Nhận Tham Dự
+                </h2>
+                <p class="font-body text-sm mb-8" style="color: #6b5b4f">
+                  Vui lòng xác nhận sự tham dự của quý khách trước ngày 1 tháng
+                  12, 2024
+                </p>
+                <div
+                  class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                >
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl">📞</span>
+                    <a
+                      href="tel:0901234567"
+                      class="font-body text-sm hover:underline"
+                      style="color: #8b5a2b"
+                      >0901 234 567</a
+                    >
+                  </div>
+                  <div
+                    class="hidden sm:block w-px h-4"
+                    style="background-color: #c9956c"
+                  ></div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl">💌</span>
+                    <a
+                      href="mailto:wedding@example.com"
+                      class="font-body text-sm hover:underline"
+                      style="color: #8b5a2b"
+                      >wedding@example.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Countdown Section -->
+              <div
+                class="animate-fade-in opacity-0 mb-16"
+                style="animation-delay: 1.1s"
+              >
+                <div class="ornament-line w-24 mx-auto mb-8"></div>
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-10"
+                >
+                  Đếm Ngược Đến Ngày Trọng Đại
+                </h2>
+                <div class="grid grid-cols-4 gap-3 max-w-md mx-auto mb-8">
+                  <div
+                    class="text-center p-4 rounded-lg"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.1),
+                        rgba(184, 134, 11, 0.05)
+                      );
+                    "
+                  >
+                    <p
+                      id="countdown-days"
+                      class="font-display text-3xl font-bold gold-gradient"
+                    >
+                      0
+                    </p>
+                    <p class="font-body text-xs mt-1" style="color: #a89078">
+                      Ngày
+                    </p>
+                  </div>
+                  <div
+                    class="text-center p-4 rounded-lg"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.1),
+                        rgba(184, 134, 11, 0.05)
+                      );
+                    "
+                  >
+                    <p
+                      id="countdown-hours"
+                      class="font-display text-3xl font-bold gold-gradient"
+                    >
+                      0
+                    </p>
+                    <p class="font-body text-xs mt-1" style="color: #a89078">
+                      Giờ
+                    </p>
+                  </div>
+                  <div
+                    class="text-center p-4 rounded-lg"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.1),
+                        rgba(184, 134, 11, 0.05)
+                      );
+                    "
+                  >
+                    <p
+                      id="countdown-minutes"
+                      class="font-display text-3xl font-bold gold-gradient"
+                    >
+                      0
+                    </p>
+                    <p class="font-body text-xs mt-1" style="color: #a89078">
+                      Phút
+                    </p>
+                  </div>
+                  <div
+                    class="text-center p-4 rounded-lg"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.1),
+                        rgba(184, 134, 11, 0.05)
+                      );
+                    "
+                  >
+                    <p
+                      id="countdown-seconds"
+                      class="font-display text-3xl font-bold gold-gradient"
+                    >
+                      0
+                    </p>
+                    <p class="font-body text-xs mt-1" style="color: #a89078">
+                      Giây
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Calendar Section -->
+              <div
+                class="animate-fade-in opacity-0 mb-16"
+                style="animation-delay: 1.2s"
+              >
+                <div class="ornament-line w-24 mx-auto mb-8"></div>
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-10"
+                >
+                  Lịch Tháng 3 - 2025
+                </h2>
+                <div
+                  class="max-w-md mx-auto p-6 rounded-2xl"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(212, 165, 116, 0.08),
+                      rgba(184, 134, 11, 0.05)
+                    );
+                    border: 1px solid rgba(201, 149, 108, 0.2);
+                  "
+                >
+                  <div class="grid grid-cols-7 gap-2 mb-4">
+                    <!-- Day headers -->
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      CN
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T2
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T3
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T4
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T5
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T6
+                    </div>
+                    <div
+                      class="text-center py-2 font-semibold font-body text-sm"
+                      style="color: #8b5a2b"
+                    >
+                      T7
+                    </div>
+                    <!-- Empty cells for days before 1st -->
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <!-- Days of March -->
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      12
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      13
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      14
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      15
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      16
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      17
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      18
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm font-bold rounded-full flex items-center justify-center"
+                      style="
+                        color: #fff;
+                        background: linear-gradient(135deg, #d4a574, #b8860b);
+                        width: 32px;
+                        height: 32px;
+                        margin: 0 auto;
+                      "
+                    >
+                      19
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      20
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      21
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      22
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      23
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      24
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      25
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      26
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      27
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      28
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      29
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      30
+                    </div>
+                    <div
+                      class="text-center py-2 font-body text-sm"
+                      style="color: #6b5b4f"
+                    >
+                      31
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Photo Album Section -->
+              <div
+                class="animate-fade-in opacity-0 mb-16"
+                style="animation-delay: 1.3s"
+              >
+                <div class="ornament-line w-24 mx-auto mb-8"></div>
+                <h2
+                  class="font-display text-3xl font-semibold gold-gradient mb-10"
+                >
+                  Album Ảnh
+                </h2>
+                <div class="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8">
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-1"
+                      src=""
+                      alt="Ảnh 1"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ảnh 1';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-2"
+                      src=""
+                      alt="Ảnh 2"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ảnh 2';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-3"
+                      src=""
+                      alt="Ảnh 3"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ảnh 3';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-4"
+                      src=""
+                      alt="Ảnh 4"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ảnh 4';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-5"
+                      src=""
+                      alt="Ảnh 5"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ảnh 5';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative aspect-square rounded-xl overflow-hidden"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.15),
+                        rgba(184, 134, 11, 0.1)
+                      );
+                    "
+                  >
+                    <img
+                      id="album-photo-6"
+                      src=""
+                      alt="Ảnh 6"
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                      onerror="
+                        this.style.background =
+                          'linear-gradient(135deg, #d4a574, #b8860b)';
+                        this.alt = 'Chỗ trống cho ��nh 6';
+                      "
+                    />
+                    <div
+                      class="absolute inset-0 flex items-center justify-center text-5xl opacity-30"
+                    >
+                      <span>📷</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="font-body text-xs text-center" style="color: #a89078">
+                  💡 Gợi ý: Dán link ảnh từ internet vào các chỗ trống để hiển
+                  thị ảnh của bạn
+                </p>
+              </div>
+              <!-- Thank You Section -->
+              <div
+                class="animate-fade-in opacity-0 pt-12"
+                style="animation-delay: 1.4s"
+              >
+                <div class="ornament-line w-40 mx-auto mb-10"></div>
+                <div class="max-w-lg mx-auto text-center">
+                  <p
+                    class="font-display text-4xl font-semibold gold-gradient mb-6"
+                  >
+                    Trân Trọng Cảm Ơn!
+                  </p>
+                  <p
+                    class="font-body text-base leading-relaxed mb-8"
+                    style="color: #6b5b4f"
+                  >
+                    Chúng tôi xin cảm ơn sâu sắc sự hiện diện, tình yêu thương
+                    và những lời chúc phúc của quý khách trong ngày trọng đại
+                    của chúng tôi.
+                  </p>
+                  <p class="font-body text-sm mb-8" style="color: #8b7355">
+                    Hy v��ng đây sẽ là một ngày đáng nhớ mà chúng ta cùng chia
+                    sẻ những khoảnh khắc hạnh phúc. Sự tham gia của quý khách
+                    chính là niền hạnh phúc lớn nhất của gia đình chúng tôi.
+                  </p>
+                  <div class="flex items-center justify-center gap-4 my-10">
+                    <div class="ornament-line flex-1 max-w-20"></div>
+                    <span class="text-3xl">💕</span>
+                    <div class="ornament-line flex-1 max-w-20"></div>
+                  </div>
+                  <div
+                    class="p-8 rounded-2xl mb-8"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        rgba(212, 165, 116, 0.08),
+                        rgba(184, 134, 11, 0.05)
+                      );
+                      border: 1px solid rgba(201, 149, 108, 0.2);
+                    "
+                  >
+                    <p
+                      class="font-display text-2xl font-semibold mb-2"
+                      style="color: #8b5a2b"
+                    >
+                      Minh Quân &amp; Thùy Linh
+                    </p>
+                    <p class="font-body text-sm" style="color: #6b5b4f">
+                      Và gia đình hai bên
+                    </p>
+                    <div
+                      class="mt-4 flex items-center justify-center gap-3 text-xl"
+                    >
+                      <span>👨‍👩‍👧‍👦</span>
+                      <span class="font-body text-xs" style="color: #a89078"
+                        >Gia đình nhà trai &amp; Gia đình nhà gái</span
+                      >
+                      <span>👨‍👩‍👧‍👦</span>
+                    </div>
+                  </div>
+                  <p
+                    class="font-display italic text-xl mb-2"
+                    style="color: #c9956c"
+                  >
+                    Cảm ơn vì đã là phần của yêu thương này!
+                  </p>
+                  <p class="font-body text-xs" style="color: #a89078">
+                    December 15, 2024
+                  </p>
+                </div>
+                <div class="ornament-line w-40 mx-auto mt-10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const defaultConfig = {
+        groom_name: "Minh Quân",
+        bride_name: "Thùy Linh",
+        wedding_date: "Chủ Nhật, 15 Tháng 12, 2024",
+        wedding_time: "10:00 Sáng",
+        venue_name: "Trung Tâm Tiệc Cưới Diamond Palace",
+        venue_address: "123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
+        invitation_message:
+          "Chúng tôi trân trọng kính mời quý khách đến dự buổi tiệc chung vui trong ngày lễ Vu Quy của chúng tôi",
+        background_color: "#fdf8f3",
+        card_color: "#fffcf8",
+        text_color: "#6b5b4f",
+        accent_color: "#c9956c",
+        highlight_color: "#8b5a2b",
+        font_family: "Cormorant Garamond",
+        font_size: 16,
+      };
+
+      // Countdown timer function
+      function startCountdown() {
+        // Parse the Vietnamese date format: "Chủ Nhật, 15 Tháng 12, 2024"
+        const dateStr = document.getElementById("wedding-date").textContent;
+        const weddingDate = parseVietnameseDate(dateStr);
+
+        if (!weddingDate) return;
+
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const timeLeft = weddingDate.getTime() - now;
+
+          if (timeLeft <= 0) {
+            document.getElementById("countdown-days").textContent = "0";
+            document.getElementById("countdown-hours").textContent = "0";
+            document.getElementById("countdown-minutes").textContent = "0";
+            document.getElementById("countdown-seconds").textContent = "0";
+            return;
+          }
+
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const minutes = Math.floor(
+            (timeLeft % (1000 * 60 * 60)) / (1000 * 60),
+          );
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          document.getElementById("countdown-days").textContent = days;
+          document.getElementById("countdown-hours").textContent = hours;
+          document.getElementById("countdown-minutes").textContent = minutes;
+          document.getElementById("countdown-seconds").textContent = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      function parseVietnameseDate(dateStr) {
+        // Parse format: "Chủ Nhật, 15 Tháng 12, 2024"
+        const months = {
+          "tháng 1": 0,
+          "tháng 2": 1,
+          "tháng 3": 2,
+          "tháng 4": 3,
+          "tháng 5": 4,
+          "tháng 6": 5,
+          "tháng 7": 6,
+          "tháng 8": 7,
+          "tháng 9": 8,
+          "tháng 10": 9,
+          "tháng 11": 10,
+          "tháng 12": 11,
+        };
+
+        const lowerStr = dateStr.toLowerCase();
+        const dayMatch = lowerStr.match(/(\d+)\s*tháng/);
+        const monthMatch = lowerStr.match(/tháng\s*(\d+)/);
+        const yearMatch = lowerStr.match(/(\d{4})/);
+
+        if (dayMatch && monthMatch && yearMatch) {
+          const day = parseInt(dayMatch[1]);
+          const month = parseInt(monthMatch[1]) - 1;
+          const year = parseInt(yearMatch[1]);
+          return new Date(year, month, day, 10, 0, 0);
+        }
+        return null;
+      }
+
+      async function onConfigChange(config) {
+        // Update text content
+        document.getElementById("groom-name").textContent =
+          config.groom_name || defaultConfig.groom_name;
+        document.getElementById("bride-name").textContent =
+          config.bride_name || defaultConfig.bride_name;
+        document.getElementById("wedding-date").textContent =
+          config.wedding_date || defaultConfig.wedding_date;
+        document.getElementById("wedding-time").textContent =
+          config.wedding_time || defaultConfig.wedding_time;
+        document.getElementById("venue-name").textContent =
+          config.venue_name || defaultConfig.venue_name;
+        document.getElementById("venue-address").textContent =
+          config.venue_address || defaultConfig.venue_address;
+        document.getElementById("invitation-message").textContent =
+          config.invitation_message || defaultConfig.invitation_message;
+
+        // Update colors
+        const bgColor =
+          config.background_color || defaultConfig.background_color;
+        const cardColor = config.card_color || defaultConfig.card_color;
+        const textColor = config.text_color || defaultConfig.text_color;
+        const accentColor = config.accent_color || defaultConfig.accent_color;
+        const highlightColor =
+          config.highlight_color || defaultConfig.highlight_color;
+
+        const wrapper = document.getElementById("app-wrapper");
+        wrapper.style.background = `linear-gradient(135deg, ${bgColor} 0%, ${adjustColor(bgColor, -5)} 50%, ${bgColor} 100%)`;
+
+        // Update fonts
+        const fontFamily = config.font_family || defaultConfig.font_family;
+        const fontSize = config.font_size || defaultConfig.font_size;
+
+        document.querySelectorAll(".font-display").forEach((el) => {
+          el.style.fontFamily = `${fontFamily}, Cormorant Garamond, serif`;
+        });
+
+        document.querySelectorAll(".font-body").forEach((el) => {
+          el.style.fontSize = `${fontSize}px`;
+        });
+
+        // Update accent colors on text elements
+        document.querySelectorAll('[style*="color: #c9956c"]').forEach((el) => {
+          el.style.color = accentColor;
+        });
+
+        document.querySelectorAll('[style*="color: #8b5a2b"]').forEach((el) => {
+          el.style.color = highlightColor;
+        });
+
+        document.querySelectorAll('[style*="color: #6b5b4f"]').forEach((el) => {
+          el.style.color = textColor;
+        });
+
+        // Restart countdown when date changes
+        startCountdown();
+      }
+
+      function adjustColor(hex, percent) {
+        const num = parseInt(hex.replace("#", ""), 16);
+        const amt = Math.round(2.55 * percent);
+        const R = Math.min(255, Math.max(0, (num >> 16) + amt));
+        const G = Math.min(255, Math.max(0, ((num >> 8) & 0x00ff) + amt));
+        const B = Math.min(255, Math.max(0, (num & 0x0000ff) + amt));
+        return (
+          "#" + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1)
+        );
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [
+            {
+              get: () =>
+                config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              },
+            },
+            {
+              get: () => config.card_color || defaultConfig.card_color,
+              set: (value) => {
+                config.card_color = value;
+                window.elementSdk.setConfig({ card_color: value });
+              },
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              },
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              },
+            },
+            {
+              get: () =>
+                config.highlight_color || defaultConfig.highlight_color,
+              set: (value) => {
+                config.highlight_color = value;
+                window.elementSdk.setConfig({ highlight_color: value });
+              },
+            },
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            },
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            },
+          },
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["groom_name", config.groom_name || defaultConfig.groom_name],
+          ["bride_name", config.bride_name || defaultConfig.bride_name],
+          ["wedding_date", config.wedding_date || defaultConfig.wedding_date],
+          ["wedding_time", config.wedding_time || defaultConfig.wedding_time],
+          ["venue_name", config.venue_name || defaultConfig.venue_name],
+          [
+            "venue_address",
+            config.venue_address || defaultConfig.venue_address,
+          ],
+          [
+            "invitation_message",
+            config.invitation_message || defaultConfig.invitation_message,
+          ],
+        ]);
+      }
+
+      // Initialize SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+
+      // Start countdown when page loads
+      window.addEventListener("load", startCountdown);
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9c7a643541ed08d9',t:'MTc3MDA0MjY3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
