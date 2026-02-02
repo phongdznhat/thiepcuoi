@@ -6,7 +6,7 @@ const defaultConfig = {
 	venue_name: "Trung Tâm Tiệc Cưới Diamond Palace",
 	venue_address: "123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh",
 	invitation_message:
-		"Chúng tôi trân trọng kính mời quý khách đến dự buổi tiệc chung vui trong ngày lễ Vu Quy của chúng tôi",
+		"kính mời quý khách đến dự lễ thành hôn của chúng tôi và chung vui trong ngày trọng đại này.",
 	background_color: "#fdf8f3",
 	card_color: "#fffcf8",
 	text_color: "#6b5b4f",
@@ -20,7 +20,9 @@ const defaultConfig = {
 function startCountdown() {
 	// Parse the Vietnamese date format: "Chủ Nhật, 15 Tháng 12, 2024"
 	const dateStr = document.getElementById("wedding-date").textContent;
+	console.debug("startCountdown: wedding-date text=", dateStr);
 	const weddingDate = parseVietnameseDate(dateStr);
+	console.debug("startCountdown: parsed weddingDate=", weddingDate);
 
 	if (!weddingDate) return;
 
@@ -66,6 +68,16 @@ function parseVietnameseDate(dateStr) {
 		const year = parseInt(yearMatch[1]);
 		return new Date(year, month, day, 10, 0, 0);
 	}
+	// Fallback: try common numeric formats like "19/3/2026" or "19-3-2026"
+	const alt = lowerStr.match(/(\d{1,2})\D+(\d{1,2})\D+(\d{4})/);
+	if (alt) {
+		const day = parseInt(alt[1]);
+		const month = parseInt(alt[2]) - 1;
+		const year = parseInt(alt[3]);
+		console.debug("parseVietnameseDate: fallback parsed", { day, month, year });
+		return new Date(year, month, day, 10, 0, 0);
+	}
+	console.warn("parseVietnameseDate: could not parse date string:", dateStr);
 	return null;
 }
 
