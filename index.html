@@ -1614,6 +1614,7 @@ display=swap"
       // Start countdown when page loads
       window.addEventListener("load", startCountdown);
     </script>
+
     <script>
       (function () {
         function c() {
@@ -1648,8 +1649,20 @@ display=swap"
           }
         }
       })();
+    </script>
 
-      /* nhạc cưới */
+    <button
+      id="musicBtn"
+      class="fixed bottom-5 right-5 bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
+    >
+      🔊
+    </button>
+
+    <audio id="bgMusic" loop>
+      <source src="mot-doi.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
       const musicBtn = document.getElementById("musicBtn");
       const bgMusic = document.getElementById("bgMusic");
       let isPlaying = false;
@@ -1665,15 +1678,5 @@ display=swap"
         isPlaying = !isPlaying;
       });
     </script>
-    <button
-      id="musicBtn"
-      class="fixed bottom-5 right-5 bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg"
-    >
-      🔊
-    </button>
-
-    <audio id="bgMusic" loop>
-      <source src="music/nhac-cuoi.mp3" type="audio/mpeg" />
-    </audio>
   </body>
 </html>
